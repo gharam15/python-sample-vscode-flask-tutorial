@@ -3,7 +3,7 @@ pipeline{
         label "java"
    }
    environment{
-      xyz='ITI'
+      xyz='Data'
    }
    stages{
      stage("build Docker image"){
