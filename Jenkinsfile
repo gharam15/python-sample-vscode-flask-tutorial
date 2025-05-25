@@ -4,20 +4,9 @@ pipeline{
    }
 
    stages{
-     stage("Build java app"){
+     stage("build Docker image"){
         steps{
-            tool name: 'java-8', type: 'jdk'
-            sh 'mvn clean package install'
-        }
-     }
-     stage("Test java app"){
-        steps{
-            sh 'mvn test'
-        }
-     }
-     stage("Build java image app"){
-        steps{
-            sh 'docker build -t java:v1 .'
+            sh 'docker build -t python:v1 .'
         }
      }
    } 
