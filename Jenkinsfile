@@ -1,22 +1,10 @@
-pipeline{
-   agent{
-        label "java"
-   }
-   environment{
-      xyz='Data'
-   }
-   stages{
-     stage("build Docker image"){
-        steps{
-            sh "echo '${xyz}'"
-            sh "docker build -t gharam/data:v${BUILD_NUMBER} ."
+node('java'){
+    checkout scm
+    stage('build Docker image'){
+        sh "docker build -t manar564/data-it:v${BUILD_NUMBER} ."
+    }
+    stage("Push Docker image"){
+        sh "docker push manar564/data-it:v${BUILD_NUMBER}"
         }
-     }
-      stage("push Docker image"){
-        steps{
-            
-            sh "docker push gharam/data:v${BUILD_NUMBER}"
-        }
-     }
-   } 
+
 }
