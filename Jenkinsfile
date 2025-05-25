@@ -2,11 +2,14 @@ pipeline{
    agent{
         label "java"
    }
-
+   environment{
+      xyz='Data'
+   }
    stages{
      stage("build Docker image"){
         steps{
-            sh 'docker build -t python:v1 .'
+            sh "${xyz}"
+            sh "docker build -t python:v${BUILD_NUMBER} ."
         }
      }
    } 
