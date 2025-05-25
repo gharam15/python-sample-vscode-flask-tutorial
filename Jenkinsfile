@@ -3,12 +3,12 @@ pipeline{
         label "java"
    }
    environment{
-      xyz='Data'
+      xyz='ITI'
    }
    stages{
      stage("build Docker image"){
         steps{
-            sh "echo'${xyz}'"
+            sh "echo '${xyz}'"
             sh "docker build -t python:v${BUILD_NUMBER} ."
         }
      }
