@@ -15,7 +15,7 @@ pipeline{
       stage("push Docker image"){
         steps{
             
-            sh "docker push gharam/data:v${BUILD_NUMBER} ."
+            sh "docker push gharam/data:v${BUILD_NUMBER}"
         }
      }
    } 
