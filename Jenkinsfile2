@@ -1,2 +1,2 @@
 @Library('libx') _
-pipeline()
+pipeline2()
