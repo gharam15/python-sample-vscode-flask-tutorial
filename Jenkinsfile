@@ -1,11 +1,12 @@
-node('java') {
-    checkout scm
+@Library('libx') _
 
-    stage('Build Docker image') {
-        sh "docker build -t gharam/iti:v${BUILD_NUMBER} ."
-    }
-
-    stage("Push Docker image") {
-        sh "docker push gharam/iti:v${BUILD_NUMBER}"
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                buildPythonApp()
+            }
+        }
     }
 }
