@@ -1,3 +1,2 @@
 @Library('libx') _
-
-pythonPipeline()
+call()
