@@ -1,2 +1,2 @@
-@Library('libx')
+@Library('libx') _
 pipeline()
