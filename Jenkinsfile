@@ -1,4 +1,4 @@
-@Library('labx') _
+@Library('libx') _
 
 pipeline {
      agent { 
