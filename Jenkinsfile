@@ -1,8 +1,9 @@
-@Library('jenkins-shared-library') _
+@Library('labx') _
 
 pipeline {
-    agent any
-
+     agent { 
+        label 'java' 
+    }
     environment {
         IMAGE_NAME = 'gharam/python-task'
     }
